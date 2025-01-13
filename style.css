@@ -466,24 +466,25 @@ border: 2px solid var(--bg-colour);
 
 .projects .content{
     display: flex;
-    row-gap: 30px;
-    column-gap: 30px;
+    row-gap: 40px;
+    column-gap: 40px;
     justify-content: center;
     align-items: center;
-    flex-wrap:nowrap ;
+    flex-wrap:wrap;
     margin: 0 10px;
    
 }
 .projects .content .container{
     display: flex;
     flex-direction: column;
-    min-height: 300px;
-    max-width: 350px;
+   max-height: 750px;
+    max-width: 450px;
     justify-content:flex-start;
     text-align: center;
     padding: 20px;
-    filter: drop-shadow(0 7px 16px rgba(0, 0, 0, 0.522));
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.522));
     background: white;
+    border:var(--bg-colour) 2px solid;
     border-radius:5% ;
    cursor: pointer; 
   
@@ -519,7 +520,7 @@ border: 2px solid var(--bg-colour);
 }
 .projects .content .container .caption a:hover{
     background:none;
-    border: var(--bg-colour) 4px solid;
+    border: var(--bg-colour) 3px solid;
     color: var(--bg-colour);
     transform: scale(1.0);
     
@@ -532,7 +533,7 @@ transition: all .3s ease;
 
 .projects .content .container:hover{
 
-transform: scale(1.1);
+transform: scale(1.04);
 transition: all .3s ease-in-out;
 
 }
@@ -546,7 +547,7 @@ transition: all .3s ease-in-out;
 .projects .content .card img{
     object-fit: cover;
   /*   filter: drop-shadow(0 7px 16px rgba(0, 0, 0, 0.522)); */
-    width: 300px;
+    width: 400px;
     height: 200px;
     /* border: var(--bg-colour) 7px solid; */
     border-radius: 5%;
@@ -586,8 +587,8 @@ transition: all .3s ease-in-out;
     background: #222;
     text-align: center;
     align-content: center;
-    /* margin: 1rem; */
-  /*   min-height: 250px; */
+  /*   margin: 1rem;  */
+   max-height: 500px;
    border-radius: 6px;
    padding: 30px 30px;
    cursor: pointer;
@@ -620,8 +621,8 @@ transition: all .3s ease-in-out;
 
 .services .content .card .txt{
     font-size: 30px;
-    font-weight: 500;
-    margin: 11px 0 12px 0;
+    font-weight: 600;
+    margin: 12px 0 15px 0;
     color: var(--txt-color);
     transition: color .3s ease;
 }
@@ -634,11 +635,14 @@ transition: all .3s ease-in-out;
 
 /* contact-me */
 .contact-me{
+    position: relative;
     background: var(--nxt-color);
+  /*   min-height: 100vh; */
     padding: 100px 0 150px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
+      /*   filter: drop-shadow(0 7px 16px rgba(0, 0, 0, 0.522)); */
 }
 .contact-me .title::before{
     background: var(--sub-color);
@@ -648,39 +652,18 @@ transition: all .3s ease-in-out;
     content: "get in touch";
     color: var(--bg-colour);
 }
-.contact-me a{
-    color: var(--sub-color);
-}
 
-.contact-me .content{
+.contact-me .container{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 100px;
-    padding-top: 20px;
+    gap: 50px;
+    /* height: 50px; */
+    background: var(--bg-colour);
+    margin-top: 30px;
 }
 
-.contact-me .content .row {
-    display: flex;
-    text-align:justify;
-    flex-direction: column;
-    justify-content:center;
-}
-
-.contact-me .content .row .info{
-    padding-bottom: 20px;
-}
-.contact-me .content .row .info .head{
-    font-size: 21px;
-    padding-bottom: 5px;
-    font-weight: 700
-    ;
-}
-
-.contact-me .content .row .sub-title{
-    font-size: 19px;
-}
 
 /* footer */
 footer{
