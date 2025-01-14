@@ -660,9 +660,82 @@ transition: all .3s ease-in-out;
     align-items: center;
     gap: 50px;
     /* height: 50px; */
-    background: var(--bg-colour);
+    /* background: var(--bg-colour); */
     margin-top: 30px;
 }
+
+.contact-me .container .contactInfo{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+}
+
+.contact-me .container .contactInfo .box{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    cursor: pointer;
+
+}
+
+.contact-me .container .contactInfo .box .icon{
+    position: relative;
+    min-width: 60px; 
+    height: 60px;
+    background: repeating-conic-gradient(from 27.5deg, var(--bg-colour)0%, var(--bg-colour) 10%, transparent 10%, transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-me .container .contactInfo .box .icon::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from 117.5deg, var(--bg-colour)0%, var(--bg-colour) 10%, transparent 10%, transparent 50%);
+}
+
+.contact-me .container .contactInfo .box .icon::after{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: var(--nxt-color);
+}
+
+.contact-me .container .contactInfo .box .icon b{
+    position: absolute;
+    inset: 8px;
+    background: var(--bg-colour);
+    z-index: 2;
+}
+
+.contact-me .container .contactInfo .box .icon i{
+    position: relative;
+    z-index: 1000;
+    color: var(--txt-color);
+    font-size: 22px;
+}
+
+.contact-me .container .contactInfo .box .text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+    font-size: 19px;
+    color: var(--sub-color);
+}
+
+.contact-me .container .contactInfo .box .text h4{
+    font-weight: 600;
+    color: var(--bg-colour);
+}
+
+.contact-me .container .contactInfo .txt{
+   margin-top: 50px;
+   font-weight: 600;
+   border-left: 50px solid var(--bg-colour);
+}
+
 
 
 /* footer */
