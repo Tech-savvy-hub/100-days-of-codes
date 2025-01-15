@@ -512,7 +512,7 @@ border: 2px solid var(--bg-colour);
     padding:8px ;
     font-size: 21px;
     font-weight: 400;
-  
+    color: var(--txt-color);
     background:var(--bg-colour);
     text-align: center;
     border-radius: 30px;
@@ -639,6 +639,7 @@ transition: all .3s ease-in-out;
     background: var(--nxt-color);
   /*   min-height: 100vh; */
     padding: 100px 0 150px 0;
+    margin: 0 100px 0 150px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -672,7 +673,7 @@ transition: all .3s ease-in-out;
 
 .contact-me .container .contactInfo .box{
     position: relative;
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     cursor: pointer;
 
@@ -732,9 +733,150 @@ transition: all .3s ease-in-out;
 
 .contact-me .container .contactInfo .txt{
    margin-top: 50px;
+   font-size: 26px;
    font-weight: 600;
    border-left: 50px solid var(--bg-colour);
+   padding-left: 10px;
+   line-height: 22px;
 }
+
+.contact-me .container .contactInfo .sci{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin: 25px 0;
+   
+}
+
+.contact-me .container .contactInfo .sci a{
+    color: var(--sub-color);
+    font-size: 26.5px;
+    border-radius: 20%;
+    padding: 0 5px; 
+   
+}
+
+.contact-me .container .contactInfo .sci a:hover{
+    color: var(--bg-colour);
+    font-size: 27px;
+    border: var(--bg-colour) 4px double;
+    border-radius: 20%;
+    padding: 0 5px;
+    transition: all .2s  ease;
+}
+
+.contact-me .container .contactForm{
+    position: relative;
+    width: 45%;
+    background: repeating-conic-gradient(from var(--a), var(--bg-colour)0%, var(--bg-colour) 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    padding: 60px;
+  
+}
+
+.contact-me .container .contactForm::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a), var(--bg-colour)0%, var(--bg-colour) 10%, transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.contact-me .container .contactForm::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+         filter: drop-shadow(0 5px 16px rgba(0, 0, 0, 0.284)); 
+    border: 15px solid white;
+    background-color: #ffffff;
+   
+}
+
+
+
+@property --a{
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;  
+}
+@keyframes animate{
+    0%{
+        --a: 0deg;
+    }
+    100%{
+        --a: 360deg;
+    }
+}
+
+.contact-me .container .contactForm form{
+    
+    position: relative;
+    z-index: 10;
+}
+
+.contact-me .container .contactForm form .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-me .container .contactForm form .inputBox input,
+.contact-me .container .contactForm form .inputBox textarea{
+    width: 100% !important;
+    padding: 5px 0;
+    font-size: 17px;
+    margin: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2.6px solid var(--bg-colour);
+    outline: none;
+    resize: none;
+}
+
+.contact-me .container .contactForm form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    pointer-events: none;
+    margin: 10px 0;
+    font-size: 18px;
+    transition: all .5s ease;
+}
+
+
+
+
+
+.contact-me .container .contactForm form .inputBox input:focus ~ span,
+.contact-me .container .contactForm form .inputBox input:valid ~ span,
+.contact-me .container .contactForm form .inputBox textarea:focus~ span,
+.contact-me .container .contactForm form .inputBox textarea:valid ~ span{
+    color:var(--bg-colour);
+    font-size: 14px;
+    transform: translateY(-22px);
+    transition: all .5s ease;
+}
+
+.contact-me .container .contactForm form .inputBox [type="submit"]{
+    width: 100%;
+    background: var(--bg-colour);
+    color: var(--txt-color);
+    border: none;
+    cursor: pointer;
+    padding: 14px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.contact-me .container .contactForm form .inputBox [type="submit"]:hover{
+  /*   border: var(--bg-colour) 4px solid;
+    color: var(--bg-colour);
+    background: transparent; */
+    transform: scale(1.05);
+    transition: all .3s ease;
+}
+
 
 
 
@@ -759,3 +901,27 @@ footer p span{
 
 
 
+
+@media (width < 1000px){
+    .contact-me{
+        padding: 60px;
+    }
+    .contact-me .container{
+        flex-direction: column;
+    }
+
+    .contact-me .container .contactInfo,
+    .contact-me .container .contactForm
+    {
+        width: 100%;
+    }
+
+    .contact-me .container .contactForm{
+        padding: 40px;
+    }
+
+    .contact-me .container .contactForm form{
+        padding: 10px;
+       
+    }
+}
